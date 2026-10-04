@@ -6,6 +6,7 @@
   <title>THZCAN | Portafolio</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -18,8 +19,16 @@
       color: white;
 
       background:
-        radial-gradient(circle at 15% 20%, rgba(255, 0, 50, .15), transparent 30%),
-        radial-gradient(circle at 85% 80%, rgba(130, 0, 50, .18), transparent 30%),
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(255, 0, 50, .15),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(130, 0, 50, .18),
+          transparent 30%
+        ),
         #07090d;
 
       padding: 40px 20px;
@@ -32,57 +41,175 @@
 
     .card {
       background: rgba(10, 14, 20, .92);
+
       border: 1px solid rgba(255, 0, 50, .45);
+
       border-radius: 25px;
+
       padding: 45px;
 
       box-shadow:
         0 0 30px rgba(255, 0, 50, .12),
         0 0 35px rgba(130, 0, 50, .12);
+
+      animation: cardGlow 4s ease-in-out infinite;
     }
+
+
+    /* =========================
+       ANIMACIÓN GENERAL DEL CARD
+       ========================= */
+
+    @keyframes cardGlow {
+
+      0%, 100% {
+        border-color: rgba(255, 23, 68, .35);
+
+        box-shadow:
+          0 0 25px rgba(255, 23, 68, .08),
+          0 0 35px rgba(130, 0, 50, .08);
+      }
+
+      50% {
+        border-color: rgba(255, 23, 68, .7);
+
+        box-shadow:
+          0 0 35px rgba(255, 23, 68, .18),
+          0 0 55px rgba(130, 0, 50, .18);
+      }
+
+    }
+
+
+    /* =========================
+       PERFIL
+       ========================= */
 
     .profile {
       text-align: center;
     }
 
+
+    /* =========================
+       THZCAN
+       ========================= */
+
     h1 {
       margin-top: 10px;
+
       font-size: 55px;
+
       letter-spacing: 5px;
 
       color: #ff1744;
 
-      text-shadow:
-        0 0 10px #ff1744,
-        0 0 25px #ff1744,
-        0 0 45px rgba(255, 23, 68, .7);
+      animation: redNeon 2.5s ease-in-out infinite;
     }
 
+
+    /* =========================
+       ROJO NEÓN
+       ========================= */
+
+    @keyframes redNeon {
+
+      0%, 100% {
+
+        color: #ff1744;
+
+        text-shadow:
+          0 0 8px #ff1744,
+          0 0 18px #ff1744,
+          0 0 30px rgba(255, 23, 68, .5);
+
+      }
+
+      50% {
+
+        color: #ff3158;
+
+        text-shadow:
+          0 0 12px #ff1744,
+          0 0 28px #ff1744,
+          0 0 50px rgba(255, 23, 68, .9);
+
+      }
+
+    }
+
+
+    /* =========================
+       SUBTÍTULO
+       ========================= */
+
     .subtitle {
+
       margin-top: 10px;
+
       font-size: 18px;
 
       color: #b0004f;
 
-      text-shadow:
-        0 0 8px #b0004f,
-        0 0 15px rgba(176, 0, 79, .7);
+      animation: wineNeon 3s ease-in-out infinite;
     }
 
+
+    /* =========================
+       ROJO VINO
+       ========================= */
+
+    @keyframes wineNeon {
+
+      0%, 100% {
+
+        color: #b0004f;
+
+        text-shadow:
+          0 0 6px #b0004f,
+          0 0 15px #b0004f;
+
+      }
+
+      50% {
+
+        color: #e00065;
+
+        text-shadow:
+          0 0 10px #b0004f,
+          0 0 25px #b0004f,
+          0 0 40px rgba(176, 0, 79, .8);
+
+      }
+
+    }
+
+
+    /* =========================
+       BOTONES
+       ========================= */
+
     .buttons {
+
       margin-top: 25px;
 
       display: flex;
+
       justify-content: center;
+
       gap: 12px;
+
       flex-wrap: wrap;
+
     }
 
     .button {
+
       padding: 12px 22px;
 
       border-radius: 12px;
+
       text-decoration: none;
+
       color: white;
 
       border: 1px solid #ff1744;
@@ -90,53 +217,170 @@
       box-shadow:
         0 0 12px rgba(255, 23, 68, .3);
 
-      transition: .2s;
+      transition: .25s;
+
+      animation: buttonRed 3s ease-in-out infinite;
+
     }
 
     .button:hover {
-      transform: translateY(-3px);
 
-      background: rgba(255, 23, 68, .1);
+      transform: translateY(-4px) scale(1.03);
+
+      background: rgba(255, 23, 68, .12);
 
       box-shadow:
-        0 0 20px rgba(255, 23, 68, .6),
-        0 0 35px rgba(255, 23, 68, .3);
+        0 0 20px rgba(255, 23, 68, .7),
+        0 0 40px rgba(255, 23, 68, .35);
+
     }
 
+
+    @keyframes buttonRed {
+
+      0%, 100% {
+
+        box-shadow:
+          0 0 10px rgba(255, 23, 68, .25);
+
+      }
+
+      50% {
+
+        box-shadow:
+          0 0 20px rgba(255, 23, 68, .55),
+          0 0 30px rgba(255, 23, 68, .2);
+
+      }
+
+    }
+
+
+    /* =========================
+       BOTÓN VINO
+       ========================= */
+
     .wine {
+
       border-color: #b0004f;
 
       box-shadow:
         0 0 12px rgba(176, 0, 79, .35);
+
+      animation: wineButton 3s ease-in-out infinite;
+
     }
 
     .wine:hover {
-      background: rgba(176, 0, 79, .12);
+
+      background: rgba(176, 0, 79, .15);
 
       box-shadow:
-        0 0 25px rgba(176, 0, 79, .7),
-        0 0 40px rgba(176, 0, 79, .3);
+        0 0 25px rgba(176, 0, 79, .8),
+        0 0 45px rgba(176, 0, 79, .35);
+
     }
+
+
+    @keyframes wineButton {
+
+      0%, 100% {
+
+        box-shadow:
+          0 0 10px rgba(176, 0, 79, .25);
+
+      }
+
+      50% {
+
+        box-shadow:
+          0 0 20px rgba(176, 0, 79, .6),
+          0 0 35px rgba(176, 0, 79, .25);
+
+      }
+
+    }
+
+
+    /* =========================
+       SECCIONES
+       ========================= */
 
     section {
+
       margin-top: 55px;
+
     }
+
 
     h2 {
+
       color: #ff1744;
+
       margin-bottom: 15px;
 
-      text-shadow:
-        0 0 10px #ff1744,
-        0 0 20px rgba(255, 23, 68, .5);
+      animation: redNeon 2.8s ease-in-out infinite;
+
     }
+
 
     p {
+
       color: #cbd3da;
+
       line-height: 1.7;
+
     }
 
+
+    /* =========================
+       PALABRAS IMPORTANTES
+       ========================= */
+
+    .blue-neon {
+
+      color: #00eaff;
+
+      font-weight: bold;
+
+      text-shadow:
+        0 0 5px #00eaff,
+        0 0 10px #00eaff,
+        0 0 20px rgba(0, 234, 255, .8);
+
+      animation: bluePulse 2.5s ease-in-out infinite;
+
+    }
+
+
+    @keyframes bluePulse {
+
+      0%, 100% {
+
+        text-shadow:
+          0 0 5px #00eaff,
+          0 0 10px #00eaff;
+
+      }
+
+      50% {
+
+        text-shadow:
+          0 0 8px #00eaff,
+          0 0 18px #00eaff,
+          0 0 30px rgba(0, 234, 255, .9);
+
+      }
+
+    }
+
+
+    /* =========================
+       GRID
+       ========================= */
+
     .grid {
+
       display: grid;
 
       grid-template-columns: repeat(2, 1fr);
@@ -144,9 +388,16 @@
       gap: 15px;
 
       margin-top: 20px;
+
     }
 
+
+    /* =========================
+       TARJETAS
+       ========================= */
+
     .item {
+
       padding: 20px;
 
       border-radius: 15px;
@@ -155,10 +406,13 @@
 
       border: 1px solid rgba(176, 0, 79, .4);
 
-      transition: .2s;
+      transition: .25s;
+
     }
 
+
     .item:hover {
+
       transform: translateY(-5px);
 
       border-color: #ff1744;
@@ -166,21 +420,33 @@
       box-shadow:
         0 0 20px rgba(255, 23, 68, .4),
         0 0 35px rgba(176, 0, 79, .25);
+
     }
 
+
+    /* =========================
+       TÍTULOS DE TARJETAS
+       ========================= */
+
     .item strong {
+
       display: block;
 
       color: #b0004f;
 
       margin-bottom: 8px;
 
-      text-shadow:
-        0 0 8px #b0004f,
-        0 0 15px rgba(176, 0, 79, .6);
+      animation: wineNeon 3s ease-in-out infinite;
+
     }
 
+
+    /* =========================
+       FOOTER
+       ========================= */
+
     footer {
+
       margin-top: 40px;
 
       text-align: center;
@@ -188,31 +454,48 @@
       color: #68717a;
 
       font-size: 13px;
+
     }
+
+
+    /* =========================
+       MÓVIL
+       ========================= */
 
     @media (max-width: 650px) {
 
       .card {
+
         padding: 25px 18px;
+
       }
 
       h1 {
+
         font-size: 40px;
+
       }
 
       .grid {
+
         grid-template-columns: 1fr;
+
       }
 
     }
+
   </style>
 </head>
+
 
 <body>
 
   <div class="container">
 
     <div class="card">
+
+
+      <!-- PERFIL -->
 
       <div class="profile">
 
@@ -222,6 +505,7 @@
           Discord • Minecraft • Staff
         </div>
 
+
         <div class="buttons">
 
           <a
@@ -230,6 +514,7 @@
           >
             Proyectos
           </a>
+
 
           <a
             class="button wine"
@@ -243,24 +528,41 @@
       </div>
 
 
+      <!-- SOBRE MÍ -->
+
       <section>
 
         <h2>Sobre mí</h2>
 
         <p>
-          ¡Hola! Soy thzcan. Soy inversionista en proyectos que aún siguen
-          en crecimiento. ¡Soy organizador del equipo Staff! Soy Developer
-          Aprendiz y mi nombre es Alexander.
+
+          Tengo una gran pasión por la
+          <span class="blue-neon">inversión</span>
+          y por descubrir
+          <span class="blue-neon">proyectos</span>
+          llamativos que tengan potencial de crecimiento.
+
+          No importa si el proyecto es pequeño o grande,
+          siempre estoy dispuesto a
+          <span class="blue-neon">invertir</span>
+          cuando realmente confío en su
+          <span class="blue-neon">futuro</span>
+          y considero que mi inversión puede valer la pena.
+
         </p>
 
       </section>
 
 
+      <!-- LO QUE HAGO -->
+
       <section>
 
         <h2>Lo que hago</h2>
 
+
         <div class="grid">
+
 
           <div class="item">
 
@@ -298,12 +600,84 @@
 
           </div>
 
+
         </div>
 
       </section>
 
 
+      <!-- EXPERIENCIA -->
+
       <section>
+
+        <h2>Experiencia</h2>
+
+        <p>
+
+          Tengo conocimientos básicos sobre el desarrollo
+          y configuración de Networks.
+
+        </p>
+
+      </section>
+
+
+      <!-- INFORMACIÓN -->
+
+      <section id="informacion">
+
+        <h2>Información</h2>
+
+        <p>
+          Discord: ztezcan.
+        </p>
+
+        <p>
+          Developer Aprendiz • Fundador • Organizador Staff
+        </p>
+
+      </section>
+
+
+      <!-- PROYECTOS -->
+
+      <section id="proyectos">
+
+        <h2>Proyectos</h2>
+
+
+        <div class="item">
+
+          <strong>🩸 Proyecto en proceso</strong>
+
+          <p>
+
+            StarnyxMC es un proyecto de Minecraft en desarrollo.
+            Actualmente estamos trabajando en nuevas funciones,
+            configuraciones y contenido para el servidor.
+
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- FOOTER -->
+
+      <footer>
+
+        © 2026 THZCAN — Portafolio
+
+      </footer>
+
+
+    </div>
+
+  </div>
+
+</body>
+</html>
 
         <h2>Experiencia</h2>
 
