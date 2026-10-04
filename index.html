@@ -40,9 +40,7 @@
 
     .profile {
       text-align: center;
-    }
-
-    .avatar {
+ .avatar {
   width: 150px;
   height: 150px;
   object-fit: cover;
@@ -52,11 +50,20 @@
     0 0 15px #00ffff,
     0 0 35px rgba(255,90,0,.5);
   background: #111;
-  transition: .3s;
+  animation: salto 3s ease-in-out infinite;
+}
+
+@keyframes salto {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .avatar:hover {
-  transform: scale(1.08);
   box-shadow:
     0 0 20px #00ffff,
     0 0 45px #00ffff,
